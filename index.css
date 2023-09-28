@@ -1,8 +1,42 @@
 body {
     margin: 0;
+    color: whitesmoke;
+    background-color: rgb(16, 15, 15);
 }
 
-#out-put1,#out-put2 {
-    border: 1px solid red;
+.container {
+    background-color: rgb(46, 45, 45);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+p {
+    text-align: center;
+    line-height: 1.5em;
+}
+
+#password-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+}
+
+.out-put1,.out-put2 {
+    background: rgb(16, 15, 15);
     border-radius: 5px;
+    padding: 5px 65px 5px 65px;
+    height: 20px;
+    width: 140px;
+}
+
+#copy-to-clipboard1,#copy-to-clipboard2 {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    margin-top: 6px;
 }

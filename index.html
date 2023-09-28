@@ -1,13 +1,30 @@
 <html>
-    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
-        <h1>Generate a<br>random password</h1>
-        <p>Never use an insecure password again.</p>
-        <button id="password-btn">Generate Password</button>&nbsp;
-        <span id="out-put1"></span>&nbsp;&nbsp;
-        <span id="out-put2"></span>
+        <div class="container">
+            <h1>Generate a<br>random password</h1>
+            <p>Never use an insecure password again. Here is a free password generator
+                that is safe and you nolonger have to think of a safe password, will do
+                 that for you for free. All you have to do is press generate and copy your
+                 prefered one among the two. 
+            </p>
+            <button id="password-btn">Generate Password</button>&nbsp;
+
+            <div class="out-put1">
+                <span id="out-put1"></span>
+            </div>
+            <button id="copy-to-clipboard1">Copy</button>&nbsp;&nbsp;
+
+            <div class="out-put2">
+                <span id="out-put2"></span>
+            </div>
+            <button id="copy-to-clipboard2">Copy</button>
+
+        </div>
         <script src="index.js"></script>
     </body>
 </html>
