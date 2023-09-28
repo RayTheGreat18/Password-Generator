@@ -12,7 +12,7 @@ let randomCharacters2
 
 passwordBtn.addEventListener("click", function() {
     
-    // Password generator for each later for the first output
+    // Password generator for each letter for the first output
     const randomIndex1 = Math.floor( Math.random() * characters.length )
     const randomIndex2 = Math.floor( Math.random() * characters.length )
     const randomIndex3 = Math.floor( Math.random() * characters.length )
@@ -30,7 +30,7 @@ passwordBtn.addEventListener("click", function() {
     const randomIndex15 = Math.floor( Math.random() * characters.length )
     
     
-    // Password generator for each later for the second output
+    // Password generator for each letter for the second output
     const randomIndex1a = Math.floor( Math.random() * characters.length )
     const randomIndex2a = Math.floor( Math.random() * characters.length )
     const randomIndex3a = Math.floor( Math.random() * characters.length )
@@ -65,31 +65,23 @@ passwordBtn.addEventListener("click", function() {
 
 })
 
+// Copy button one
 copyToClipboard1.addEventListener("click", () => {
-    // console.log(randomCharacters1)
-    randomCharacters1.select();
-
-    // Copy the selected text to the clipboard
-    document.execCommand('copy');
-
-    // Deselect the input field (optional)
-    randomCharacters1.blur();
-
-    // Change the button text to indicate success (optional)
-    copyToClipboard1.innerText = 'Text Copied!';
-
-    // Reset the button text after a short delay (optional)
-    setTimeout(() => {
-        copyToClipboard1.innerText = 'Copy Text';
-    }, 2000); // Reset after 2 seconds (2000 milliseconds)
+    const cb = navigator.clipboard
+    cb.writeText(randomCharacters1)
+    .then(()=>{
+        alert("Password copied")
+    })
 })
 
+// Copy button one
 copyToClipboard2.addEventListener("click", () => {
-    console.log(randomCharacters2)
+    const cb = navigator.clipboard
+    cb.writeText(randomCharacters2)
+    .then(()=>{
+        alert("Password copied")
+    })
 })
 
-fetch("https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand")
-    .then(response => response.json())
-    .then(data => console.log(data))
 
 
