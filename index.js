@@ -6,6 +6,8 @@ const outPut1 = document.getElementById("out-put1")
 const outPut2 = document.getElementById("out-put2")
 const copyToClipboard1 = document.getElementById("copy-to-clipboard1")
 const copyToClipboard2 = document.getElementById("copy-to-clipboard2")
+let randomCharacters1
+let randomCharacters2
 
 
 passwordBtn.addEventListener("click", function() {
@@ -45,25 +47,49 @@ passwordBtn.addEventListener("click", function() {
     const randomIndex14a = Math.floor( Math.random() * characters.length )
     const randomIndex15a = Math.floor( Math.random() * characters.length )
     
-    outPut1.textContent = 
+
+
+    
+
+    randomCharacters1 = 
     characters[randomIndex1] + characters[randomIndex2] + characters[randomIndex3] + characters[randomIndex4] + characters[randomIndex5] + characters[randomIndex6] + characters[randomIndex7] + characters[randomIndex8] + characters[randomIndex9] + characters[randomIndex10] + characters[randomIndex11] + characters[randomIndex12] + characters[randomIndex13] + characters[randomIndex14] + characters[randomIndex15]
     
+    outPut1.textContent = randomCharacters1
     
     
-    outPut2.textContent = 
+    randomCharacters2 = 
     characters[randomIndex1a] + characters[randomIndex2a] + characters[randomIndex3a] + characters[randomIndex4a] + characters[randomIndex5a] + characters[randomIndex6a] + characters[randomIndex7a] + characters[randomIndex8a] + characters[randomIndex9a] + characters[randomIndex10a] + characters[randomIndex11a] + characters[randomIndex12a] + characters[randomIndex13a] + characters[randomIndex14a] + characters[randomIndex15a]
     
-    
+    outPut2.textContent = randomCharacters2
+
+
 })
 
 copyToClipboard1.addEventListener("click", () => {
-    console.log("Copy 1 works")
+    // console.log(randomCharacters1)
+    randomCharacters1.select();
+
+    // Copy the selected text to the clipboard
+    document.execCommand('copy');
+
+    // Deselect the input field (optional)
+    randomCharacters1.blur();
+
+    // Change the button text to indicate success (optional)
+    copyToClipboard1.innerText = 'Text Copied!';
+
+    // Reset the button text after a short delay (optional)
+    setTimeout(() => {
+        copyToClipboard1.innerText = 'Copy Text';
+    }, 2000); // Reset after 2 seconds (2000 milliseconds)
 })
 
 copyToClipboard2.addEventListener("click", () => {
-    console.log("Copy 2 works")
+    console.log(randomCharacters2)
 })
 
-
+fetch("https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand")
+    .then(response => response.json())
+    .then(data => console.log(data))
 
 
